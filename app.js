@@ -1,8 +1,13 @@
 const form = document.querySelector("#addForm");
 const itemList = document.getElementById("items");
+// const delItem = document.querySelector(".delete");
+// console.log(delItem);
 
 // add event listener for addtask
 form.addEventListener("submit", addTask);
+
+// added event listener for remove item
+itemList.addEventListener("click", deleteItem);
 
 // function for add task
 function addTask(e) {
@@ -37,4 +42,16 @@ function addTask(e) {
 
   //   reset Form
   form.reset();
+}
+
+// Delete Item Function
+function deleteItem(e) {
+  if (e.target.classList.contains("delete")) {
+    if (confirm("Are you sure?")) {
+      const li = e.target.parentElement;
+      console.log(li);
+      itemList.removeChild(li);
+    }
+    console.log("thatme");
+  }
 }
