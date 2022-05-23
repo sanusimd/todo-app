@@ -16,6 +16,12 @@ function addTask(e) {
   //   Get the Value from the input text
   const text = document.querySelector("#item").value;
 
+  // checked if the input text value not empty
+  if (text == "") {
+    alert("Please Enter task");
+    return false;
+  }
+
   // create element li
   const li = document.createElement("li");
 
